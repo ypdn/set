@@ -29,7 +29,7 @@ func TestStuff(test *testing.T) {
 
 	test.Log(Union(s, t, u))
 	test.Log(Intersection(s, t))
-	test.Log(s.Difference(t))
+	test.Log(s.Diff(t))
 	if !s.Equal(s.Copy()) {
 		test.Fail()
 	}
@@ -37,7 +37,7 @@ func TestStuff(test *testing.T) {
 		test.Fail()
 	}
 	ct := t.Copy()
-	ct.Remove("york")
+	ct.Delete("york")
 	if !ct.Subset(s) {
 		test.Fail()
 	}
